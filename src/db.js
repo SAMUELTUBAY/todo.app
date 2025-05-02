@@ -1,11 +1,12 @@
 import pg from 'pg';
+import {DB_HOST,DB_DATABASE,DB_PORT,DB_PASSWORD,DB_USER} from "./confi.js";
 
 const dbClient = new pg.Pool({
-    host:"samuel-todo.cbuucgiqsve2.us-west-2.rds.amazonaws.com",
-    user:"postgres",
-    password:"Password.123",
-    database: "todo",
-    port:5432,
+    host: DB_HOST,
+    user: DB_USER,
+    password: DB_PASSWORD,
+    database: DB_DATABASE,
+    port:DB_PORT,
     //Solo para AWS
     ssl:{
         rejectUnauthorized: false
